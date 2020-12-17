@@ -3,10 +3,12 @@ import { NavLink } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { Navbar } from "react-bootstrap"
 import { Nav } from "react-bootstrap"
+import { Button } from "react-bootstrap"
 import { FormControl } from "react-bootstrap"
+import { Form } from "react-bootstrap"
 
 
-export class Nav extends React.Component {
+export class NavBar extends React.Component {
     state = {
         searchItem: "",
     }
@@ -81,4 +83,4 @@ export class Nav extends React.Component {
     }
 }
 
-export default Nav
+export default NavBar

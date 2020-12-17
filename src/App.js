@@ -39,8 +39,8 @@ class App extends React.Component {
     )
     this.setState({ itemFiltered: itemFiltered })
   }
-  getPurchases = (cart) => {
-    return cart
+  getPurchases = (purchases) => {
+    return purchases
   }
 
   render() {

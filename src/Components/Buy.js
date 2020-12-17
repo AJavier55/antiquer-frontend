@@ -9,7 +9,7 @@ const Buy = (props) => {
            <img src={item.image} alt={item.name} />
             <h5>{item.name}</h5>
             <h5>{item.price}</h5>
-            <h5>{item.purchase.quantity}</h5>
+            <h5>{props.purchase.quantity}</h5>
        </div>
    )
 }

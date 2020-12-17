@@ -14,17 +14,9 @@ class PurchaseContainer extends React.Component {
     }
     filteredPurchases = (purchases) => {
       this.props.getPurchases(purchases)
-      let filteredUsers = purchases.filter((purchase) => purchase.user_id === 38)
+      let filteredUsers = purchases.filter((purchase) => purchase.user_id === 39)
       let filteredPurchases = filteredUsers.filter((purchase) => !purchase.sold)
       this.setState({ purchase: filteredPurchases })
-    }
-    addTotal = (price) => {
-      let singlePrice = parseInt(this.state.total)
-      this.setState({ total: singlePrice + parseInt(price) })
-    }
-    updateTotal = (price) => {
-      let itemPrice = parseInt(price)
-      this.setState({ total: this.state.total - itemPrice })
     }
     cartPurchase = () => {
       return this.state.purchase.map((purchase) => (
@@ -36,6 +28,15 @@ class PurchaseContainer extends React.Component {
         />
       ))
     }
+    getTotal = (price) => {
+      let singlePrice = parseInt(this.state.total)
+      this.setState({ total: singlePrice + parseInt(price) })
+    }
+    updateTotal = (price) => {
+      let itemPrice = parseInt(price)
+      this.setState({ total: this.state.total - itemPrice })
+    }
+    
     completePurchase = () => {
       this.state.purchase.forEach((item) =>
       fetch(`http://localhost:3000/api/v1/purchases/${item.id}`, {
@@ -56,7 +57,7 @@ class PurchaseContainer extends React.Component {
         fetch(`http://localhost:3000/api/v1/items/${item.item_id}`, {
           method: "PATCH",
           body: JSON.stringify({
-            quantity: item.itemQuantity - item.quantity,
+            quantity: item.quantityAvailable - item.quantity,
           }),
           headers: {
             "Content-type": "application/json",

@@ -1,13 +1,11 @@
 import React from "react"
 import Item from "../Components/Item"
 import CategoryFilter from "../Components/CategoryFilter"
-import { Route, Switch } from "react-router-dom"
 import FormContainer from "../Containers/FormContainer"
 
 class ItemContainer extends React.Component {
     state = {
         items: [],
-        search: "",
         filteredItems: [],
         display: false,
 

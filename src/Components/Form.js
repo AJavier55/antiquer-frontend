@@ -7,10 +7,27 @@ class Form extends React.Component {
         image: "",
         price: "",
         description: "",
-        user_id: 38,
+        user_id: 39,
         quantity: "",
     }
 
+    submitHandler = (e) => {
+        e.preventDefault()
+        this.setState({
+        name: "",
+        category: "miscellaneous",
+        image: "",
+        price: "",
+        description: "",
+        user_id: 39,
+        quantity: "",
+    })
+        this.sellItem()
+    }
+    changeHandler = (e) => {
+        this.setState({ [e.target.name]: e.target.value })
+    }
+    
     sellItem = () => {
         fetch("http://localhost:3000/api/v1/items", {
             method: "POST",
@@ -21,27 +38,11 @@ class Form extends React.Component {
             body: JSON.stringify(this.state),   
         })
     }
-    submitHandler = (e) => {
-        e.preventDefault()
-        this.setState({
-        name: "",
-        category: "miscellaneous",
-        image: "",
-        price: "",
-        description: "",
-        user_id: 38,
-        quantity: "",
-    })
-        this.sellItem()
-    }
-    changeHandler = (e) => {
-        this.setState({ [e.target.name]: e.target.value })
-    }
 
     render() {
         return (
             <div className="sell-form">
-                <h4 className="sell">Sell Item</h4>
+                <h4 className="sell">For Sale</h4>
                 <form className="form" onSubmit={this.submitHandler}>
                     <div className="input-name">
                         Name:
@@ -71,7 +72,7 @@ class Form extends React.Component {
                     <div className="input-description">
                         <textarea name="description" type="text" value={this.state.description} onChange={this.changeHandler} placeholder="description" />
                     </div>
-                    <input type="submit" value="sell-item" />
+                    <input className="sell-button" type="submit" value="sell-item" />
                 </form>
             </div>
         )

@@ -8,7 +8,7 @@ class CategoryFilter extends React.Component {
     render() {
         return (
             <div>
-                <h5>Filter By Category</h5>
+                <h5>Find By Category</h5>
                 <select name="sort-by-category" onChange={this.sortHandler}>
                     <option value="fashion">Fashion</option>
                     <option value="furniture">Furniture</option>

@@ -3,6 +3,12 @@ import React from "react"
 class Sell extends React.Component {
     state = { deleted: false }
 
+    clickHandler = () => {
+        const deleted = this.state.deleted
+        this.setState({ deleted: !deleted })
+        this.removeItem()
+    }
+   
     removeItem = (e) => {
         let  id = this.props.item.id
         fetch(`http://localhost:3000/api/v1/items/${id}` , {
@@ -10,11 +16,6 @@ class Sell extends React.Component {
         })
     }
 
-    clickHandler = () => {
-        const deleted = this.state.deleted
-        this.setState({ deleted: !deleted })
-        this.removeItem()
-    }
 
     render() {
         let item = this.props.item
@@ -23,8 +24,8 @@ class Sell extends React.Component {
                 <img src={item.image} alt={item.name} />
                 <h5> {item.name} </h5>
                 <h5> ${item.price} </h5>
-                <h5> Quantity: {item.quantity} </h5>
                 <button onClick={this.clickHandler}>Delete</button>
+                <h5> Quantity: {item.quantity} </h5>
             </div>
         )
     }

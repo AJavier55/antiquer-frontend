@@ -18,11 +18,18 @@ class Purchase extends React.Component {
             item: item,
             price: item.price * this.props.purchase.quantity
         })
-        this.purchaseTotal()
+        this.getTotal()
     }
-    purchaseTotal = () => {
-        this.props.purchaseTotal(this.state.price)
+    getTotal = () => {
+        this.props.getTotal(this.state.price)
     }
+    deleteHandler = (e) => {
+        const deleted = this.state.deleted
+        this.setState({ deleted: !deleted, price: 0 })
+        console.log(this.state.item.price)
+        this.props.updateTotal(this.state.item.price * this.props.purchase.quantity)
+        this.deleteCart()
+       }
 
    deleteCart = (e) => {
        let id = this.props.purchase.id
@@ -30,13 +37,7 @@ class Purchase extends React.Component {
         method: "DELETE",
       })
    }
-   deleteHandler = (e) => {
-    const deleted = this.state.deleted
-    this.setState({ deleted: !deleted, price: 0 })
-    // console.log(this.state.item.price)
-    this.props.updateTotal(this.state.item.price * this.props.purchase.quantity)
-    this.deleteCart()
-   }
+  
 
    render() {
        let item = this.state.item
@@ -45,8 +46,8 @@ class Purchase extends React.Component {
                <img src={item.image} alt={item.name} />
                 <h5>{item.name}</h5>
                 <h5>${item.price * this.props.purchase.quantity}</h5>
-                <h5>Quantity: {this.props.purchase.quantity}</h5>
                 <button onClick={this.deleteHandler}>Delete</button>
+                <h5>Quantity: {this.props.purchase.quantity}</h5>  
            </div>
        )
    }

@@ -3,7 +3,7 @@ import Item from "../Components/Item"
 
 const MiscContainer = (props) => {
     const findMiscellaneous = props.items.filter((item) => item.category === "miscellaneous")
-    const collectibleItems = findMiscellaneous.map((item) => (<Item key={item.id} collectibleItems={item} /> ))
+    const collectibleItems = findMiscellaneous.map((item) => (<Item key={item.id} item={item} /> ))
     return (
         <div className="item-container">
             {collectibleItems}

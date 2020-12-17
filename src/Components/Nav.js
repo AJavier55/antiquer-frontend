@@ -47,24 +47,15 @@ export class NavBar extends React.Component {
                 </Link>
                 </Form>
                 
-                <Nav className="mr-auto">
-                    <Nav.Link href="/">Home</Nav.Link>
-                    {/* <Nav.Link
-                        href={"/antiques"}
+                <Nav className="antique-nav">
+                    <Nav.Link
+                        href={"/items"}
                         onMouseEnter={this.onMouseEnter}
                         onMouseLeave={this.onMouseLeave}
                         onClick={this.navBarFilter}
                     >
                         Antiques
-                    </Nav.Link> */}
-                    <Nav.Link
-                        href={"/account"}
-                        onMouseEnter={this.onMouseEnter}
-                        onMouseLeave={this.onMouseLeave}
-                        onClick={this.navBarFilter}
-                    >
-                        My Profile
-                    </Nav.Link>          
+                    </Nav.Link>         
                     <Nav.Link
                         href={"/sell-item"}
                         onMouseEnter={this.onMouseEnter}

@@ -33,7 +33,7 @@ class Purchase extends React.Component {
    deleteHandler = (e) => {
     const deleted = this.state.deleted
     this.setState({ deleted: !deleted, price: 0 })
-    console.log(this.state.item.price)
+    // console.log(this.state.item.price)
     this.props.updateTotal(this.state.item.price * this.props.purchase.quantity)
     this.deleteCart()
    }

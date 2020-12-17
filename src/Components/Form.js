@@ -1,7 +1,5 @@
 import React from "react"
 
-const ITEM_URL = "http://localhost:3000/items"
-
 class Form extends React.Component {
     state = {
         name: "",
@@ -9,12 +7,12 @@ class Form extends React.Component {
         image: "",
         price: "",
         description: "",
-        user_id: 0,
+        user_id: 1,
         quantity: "",
     }
 
     sellItem = () => {
-        fetch(ITEM_URL, {
+        fetch("http://localhost:3000/items", {
             method: "POST",
             headers: {
               "Content-type": "application/json",
@@ -25,14 +23,13 @@ class Form extends React.Component {
     }
     submitHandler = (e) => {
         e.preventDefault()
-        console.log(this.state)
         this.setState({
         name: "",
         category: "miscellaneous",
         image: "",
         price: "",
         description: "",
-        user_id: 0,
+        user_id: 1,
         quantity: "",
     })
         this.sellItem()
@@ -48,7 +45,7 @@ class Form extends React.Component {
                 <form className="form" onSubmit={this.submitHandler}>
                     <div className="input-name">
                         Name:
-                        <input name="name"type="text"  value={this.changeHandler} placeholder="name" />
+                        <input name="name" type="text" value={this.state.name} onChange={this.changeHandler} placeholder="name" />
                     </div>
                     <div className="input-price">
                         Price:

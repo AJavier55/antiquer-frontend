@@ -3,7 +3,7 @@ import React from "react"
 class ShowItem extends React.Component {
     state = {
         item: [],
-        quantity: 1,
+        quantityOfItems: 1,
     }
     componentDidMount() {
         let item = this.props.items.find(
@@ -13,11 +13,11 @@ class ShowItem extends React.Component {
       }    
     
       createCart = () => {
-        let quantity = parseInt(this.state.quantity)
+        let quantity = parseInt(this.state.quantityOfItems)
         let itemQuantity = parseInt(this.state.item.quantity)
         let item_id = parseInt(this.state.item.id)
         let cartItem = {
-          user_id: 0,
+          user_id: 1,
           item_id: item_id,
           quantity: quantity,
           sold: false,
@@ -69,7 +69,7 @@ class ShowItem extends React.Component {
                       </form>
                   </span>
                 <div className="description">
-                    <h5>Description</h5>
+                    <h5>About</h5>
                     <p>{item.description}</p>
               </div>
 

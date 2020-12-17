@@ -14,7 +14,7 @@ class PurchaseContainer extends React.Component {
     }
     filteredPurchases = (purchases) => {
       this.props.getPurchases(purchases)
-      let filteredUsers = purchases.filter((purchase) => purchase.user_id === 0)
+      let filteredUsers = purchases.filter((purchase) => purchase.user_id === 1)
       let filteredPurchases = filteredUsers.filter((purchase) => !purchase.sold)
       this.setState({ purchase: filteredPurchases })
     }
@@ -74,9 +74,9 @@ class PurchaseContainer extends React.Component {
           {this.cartPurchase()}
           <div>
             <PayPalButton
-            amount={this.state.total} onSuccess={(details, data) => {
+            amount={this.state.total} onSuccess={(data) => {
               alert(
-                details.payer.name.given_name + "Your Transaction Was Successfully Completed!"
+                "Your Transaction Was Successfully Completed!"
               )
               this.completePurchase()
             }}

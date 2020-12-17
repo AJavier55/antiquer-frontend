@@ -1,9 +1,12 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 const Item = (props) => {
     return (
         <div className="individual-item-card">
+                <NavLink to={`/items/${props.item.id}`}>
+                    <button type="button">View</button>
+                </NavLink>
             <div className="item-image">
                 <img src={props.item.image} alt={props.item.name}></img>
             </div>
@@ -15,9 +18,7 @@ const Item = (props) => {
             </div>
             <div className="item-price">
                 <h5>${props.item.price}</h5>
-                <Link to={{pathname: `/items/${props.item.id}`, state: props }}>
-                    <button type="button">View Item</button>
-                </Link>
+    
             </div>
         </div>
     )

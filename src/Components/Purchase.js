@@ -8,7 +8,7 @@ class Purchase extends React.Component {
     }
 
     componentDidMount() {
-        fetch(`http://localhost:3000/items/${this.props.purchase.item_id}`)
+        fetch(`http://localhost:3000/api/v1/items/${this.props.purchase.item_id}`)
         .then((resp) => resp.json())
         .then((item) => this.updateState(item))
     }
@@ -26,7 +26,7 @@ class Purchase extends React.Component {
 
    deleteCart = (e) => {
        let id = this.props.purchase.id
-       fetch(`http://localhost:3000/purchases/${id}`, {
+       fetch(`http://localhost:3000/api/v1/purchases/${id}`, {
         method: "DELETE",
       })
    }

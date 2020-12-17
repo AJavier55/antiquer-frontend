@@ -13,7 +13,7 @@ class ItemContainer extends React.Component {
 
       }
       componentDidMount() {
-        fetch("http://localhost:3000/items")
+        fetch("http://localhost:3000/api/v1/items")
           .then((resp) => resp.json())
           .then((items) =>
             this.setState({ items: items, filteredItems: items })

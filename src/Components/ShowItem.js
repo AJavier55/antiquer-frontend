@@ -17,14 +17,14 @@ class ShowItem extends React.Component {
         let itemQuantity = parseInt(this.state.item.quantity)
         let item_id = parseInt(this.state.item.id)
         let cartItem = {
-          user_id: 1,
+          user_id: 38,
           item_id: item_id,
           quantity: quantity,
           sold: false,
           itemQuantity: itemQuantity,
         }
     
-        fetch("http://localhost:3000/purchases", {
+        fetch("http://localhost:3000/api/v1/purchases", {
           method: "POST",
           headers: {
             "Content-type": "application/json",

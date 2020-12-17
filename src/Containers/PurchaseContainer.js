@@ -4,7 +4,7 @@ import { PayPalButton } from "react-paypal-button-v2"
 
 class PurchaseContainer extends React.Component {
     state = {
-      cart: [],
+      purchase: [],
       total: 0,
     }
     componentDidMount() {
@@ -36,7 +36,56 @@ class PurchaseContainer extends React.Component {
         />
       ))
     }
-    
+    completePurchase = () => {
+      this.state.purchase.forEach((item) =>
+      fetch(`http://localhost:3000/purchases/${item.id}`, {
+        method: "PATCH",
+        body: JSON.stringify({
+          sold: true, 
+        }),
+        headers: {
+          "Content-type": "application/json",
+        },
+      })
+    )
+    this.itemQuantity()
+    }
+
+    itemQuantity = () => {
+      this.state.purchase.forEach((item) =>
+        fetch(`http://localhost:3000/items/${item.item_id}`, {
+          method: "PATCH",
+          body: JSON.stringify({
+            quantity: item.itemQuantity - item.quantity,
+          }),
+          headers: {
+            "Content-type": "application/json",
+          },
+        })
+      )
+      this.setState({ purchase: [], total: 0 })
+      this.cartPurchase()
+    }
+
+    render() {
+      return (
+        <div className="cart">
+          <h3>Cart</h3>
+          {this.cartPurchase()}
+          <div>
+            <PayPalButton
+            amount={this.state.total} onSuccess={(details, data) => {
+              alert(
+                details.payer.name.given_name + "Your Transaction Was Successfully Completed!"
+              )
+              this.completePurchase()
+            }}
+            />
+          </div>
+          <h5>Total: ${this.state.total}</h5>
+        </div>
+      )
+    }
 }
 
 export default PurchaseContainer

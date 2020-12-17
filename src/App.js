@@ -9,7 +9,9 @@ import FashionContainer from "./Containers/FashionContainer"
 import FurnitureContainer from "./Containers/FurnitureContainer"
 import MiscContainer from "./Containers/MiscContainer"
 import PurchaseContainer from "./Containers/PurchaseContainer"
-import { ReactComponent } from '*.svg'
+import SearchContainer from "./Containers/SearchContainer"
+import ShowItem from "./Components/ShowItem"
+// import { ReactComponent } from '*.svg'
 
 const BASE_URL = "http://localhost:3000/"
 

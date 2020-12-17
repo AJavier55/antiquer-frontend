@@ -21,7 +21,7 @@ class ShowItem extends React.Component {
           item_id: item_id,
           quantity: quantity,
           sold: false,
-          quantityAvailable: itemQuantity,
+          itemQuantity: itemQuantity,
         }
     
         fetch("http://localhost:3000/purchases", {

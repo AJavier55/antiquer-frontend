@@ -1,5 +1,4 @@
 import React from "react"
-import React from "react"
 
 class Purchase extends React.Component {
     state = {
@@ -53,4 +52,4 @@ class Purchase extends React.Component {
    }
 } 
 
-export deafult Purchase
+export default Purchase

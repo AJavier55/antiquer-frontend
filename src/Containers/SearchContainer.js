@@ -2,7 +2,7 @@ import React from "react"
 import Item from "../Components/Item"
 
 const SearchContainer = (props) => {
-    const searchItems = props.items.map((item) => (
+    let searchItems = props.items.map((item) => (
         <Item key={item.id} item={item} />
     ))
 

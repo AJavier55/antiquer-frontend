@@ -12,6 +12,7 @@ import PurchaseContainer from "./Containers/PurchaseContainer"
 import SearchContainer from "./Containers/SearchContainer"
 import ShowItem from "./Components/ShowItem"
 // import { ReactComponent } from '*.svg'
+import "bootstrap/dist/css/bootstrap.min.css"
 
 const BASE_URL = "http://localhost:3000/"
 

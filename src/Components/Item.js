@@ -18,7 +18,6 @@ const Item = (props) => {
             </div>
             <div className="item-price">
                 <h5>${props.item.price}</h5>
-    
             </div>
         </div>
     )

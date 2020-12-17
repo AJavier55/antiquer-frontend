@@ -21,25 +21,23 @@ export class NavBar extends React.Component {
      onMouseLeave = () => {}
 
       submitHandler = () => {
-        this.props.searchHandler(this.state.searchTerm)
-        this.setState({ searchTerm: "" })
+        this.props.searchHandler(this.state.searchItem)
+        this.setState({ searchItem: "" })
       }
     
     render() {
         return (
-            <Navbar expand="lg">
+            <Navbar>
                 <Form inline>
                 <FormControl
                     type="text"
                     placeholder="Search"
-                    // className="mr-sm-2"
                     name="searchItem"
                     value={this.state.searchItem}
                     onChange={this.changeHandler}
                 />
                 <Link to="/search">
                     <Button
-                        variant="outline-primary"
                         onClick={this.submitHandler}
                     >
                         Search
@@ -49,21 +47,21 @@ export class NavBar extends React.Component {
                 
                 <Nav className="antique-nav">
                     <Nav.Link
-                        href={"/items"}
+                        href={"/antiques"}
                         onMouseEnter={this.onMouseEnter}
                         onMouseLeave={this.onMouseLeave}
                         onClick={this.navBarFilter}
                     >
                         Antiques
                     </Nav.Link>         
-                    <Nav.Link
+                    {/* <Nav.Link
                         href={"/sell-item"}
                         onMouseEnter={this.onMouseEnter}
                         onMouseLeave={this.onMouseLeave}
                         onClick={this.navBarFilter}
-                    >
-                        Sell 
-                    </Nav.Link>
+                    > */}
+                        {/* Sell  */}
+                    {/* </Nav.Link> */}
                     <Nav.Link href="/purchase">
                         Cart           
                     </Nav.Link>

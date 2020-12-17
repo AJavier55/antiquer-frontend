@@ -15,13 +15,12 @@ import ShowItem from "./Components/ShowItem"
 import "bootstrap/dist/css/bootstrap.min.css"
 
 
-const BASE_URL = "http://localhost:3000/"
 
 class App extends React.Component {
   state= {
     items: [],
     purchases: [],
-    itemSearched: [],
+    itemFiltered: [],
   }
 
   componentDidMount() {
@@ -35,10 +34,10 @@ class App extends React.Component {
   }
 
   searchHandler = (searchItem) => {
-    let itemSearched = this.state.items.filter(
+    let itemFiltered = this.state.items.filter(
       (item) => item.name.toLowerCase().includes(searchItem)
     )
-    this.setState({ itemSearched: itemSearched })
+    this.setState({ itemFiltered: itemFiltered })
   }
   userPurchase = (cart) => {
     return cart
@@ -59,46 +58,46 @@ class App extends React.Component {
           <Route path="/search"
           render={(props) => (
             <SearchContainer {...props}
-            items={this.state.itemSearched} />
+            items={this.state.itemFiltered} />
           )}
           />
-          <Route exact path="/items"
+          <Route exact path="/antiques"
           render={(props) => (
             <ItemContainer {...props}
             items={this.state.items} />
           )}
           />
-          <Route exact path="/items/fashion"
+          <Route exact path="/antiques/fashion"
           render={(props) => (
             <FashionContainer {...props}
             items={this.state.items} />
           )}
           />
-          <Route exact path="/items/furniture"
+          <Route exact path="/antiques/furniture"
           render={(props) => (
             <FurnitureContainer {...props}
             items={this.state.items} />
           )}
           />
-          <Route exact path="/items/collectibles"
+          <Route exact path="/antiques/collectibles"
           render={(props) => (
             <CollectiblesContainer {...props}
             items={this.state.items} />
           )}
           />
-          <Route exact path="/items/miscellaneous"
+          <Route exact path="/antiques/miscellaneous"
           render={(props) => (
             <MiscContainer {...props}
             items={this.state.items} />
           )}
           />
           <Route path="/items/:id"
-          render={(props) => (
+           render={(props) => (
             <ShowItem {...props} 
             items={this.state.items} />
           )}
           />
-          <Route path="/purchase"
+          <Route exact path="/purchase"
           render={(props) => (
             <PurchaseContainer {...props}
             items={this.state.items}

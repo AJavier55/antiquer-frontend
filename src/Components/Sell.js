@@ -3,7 +3,7 @@ import React from "react"
 class Sell extends React.Component {
     state = { deleted: false }
 
-    removeItemFromCart = (e) => {
+    removeItem = (e) => {
         let  id = this.props.item.id
         fetch(`http://localhost:3000/items/${id}` , {
             method: "DELETE",
@@ -13,7 +13,7 @@ class Sell extends React.Component {
     clickHandler = () => {
         const deleted = this.state.deleted
         this.setState({ deleted: !deleted })
-        this.removeItemFromCart()
+        this.removeItem()
     }
 
     render() {
@@ -21,9 +21,9 @@ class Sell extends React.Component {
         return (
             <div className={this.state.deleted ? "deleted" : "visible"}>
                 <img src={item.image} alt={item.name} />
-                <h5> {product.name} </h5>
-                <h5> ${product.price} </h5>
-                <h5> Quantity: {product.quantity} </h5>
+                <h5> {item.name} </h5>
+                <h5> ${item.price} </h5>
+                <h5> Quantity: {item.quantity} </h5>
                 <button onClick={this.clickHandler}>Delete</button>
             </div>
         )

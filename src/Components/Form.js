@@ -41,7 +41,7 @@ class Form extends React.Component {
     render() {
         return (
             <div className="sell-form">
-                <h4 className="sell-item">Sell Item</h4>
+                <h4 className="sell">Sell Item</h4>
                 <form className="form" onSubmit={this.submitHandler}>
                     <div className="input-name">
                         Name:
@@ -71,7 +71,7 @@ class Form extends React.Component {
                     <div className="input-description">
                         <textarea name="description" type="text" value={this.state.description} onChange={this.changeHandler} placeholder="description" />
                     </div>
-                    <input type="submit" value="list-for-sale" />
+                    <input type="submit" value="sell-item" />
                 </form>
             </div>
         )

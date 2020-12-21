@@ -15,7 +15,7 @@ class ShowItem extends React.Component {
       submitHandler = (e) => {
         e.preventDefault()
         this.createCart()
-        alert(this.state.item.name + " added to cart!")
+        alert(" added to cart!")
       }
     
       createCart = () => {
@@ -30,7 +30,7 @@ class ShowItem extends React.Component {
           quantityAvailable: quantityAvailable,
         }
     
-        fetch("http://localhost:3000/api/v1/purchases", {
+        fetch("http://localhost:3000/purchases", {
           method: "POST",
           headers: {
             "Content-type": "application/json",

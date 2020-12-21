@@ -16,7 +16,7 @@ const Item = (props) => {
             <div className="item-price">
                 <h5>${props.item.price}</h5>
             </div>
-            <Link to={{pathname:`/items/${props.item.id}`, state: props}}>
+            <Link to={{ pathname:`/items/${props.item.id}`, state: props}}>
                     <button type="button">View</button>
             </Link>
         </div>

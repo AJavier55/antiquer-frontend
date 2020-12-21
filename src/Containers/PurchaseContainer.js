@@ -8,11 +8,11 @@ class PurchaseContainer extends React.Component {
       total: 0,
     }
     componentDidMount() {
-      fetch("http://localhost:3000/api/v1/purchases")
+      fetch("http://localhost:3000/purchases")
       .then((resp) => resp.json())
-      .then((purchases) => this.filteredPurchases(purchases))
+      .then((purchases) => this.filterPurchases(purchases))
     }
-    filteredPurchases = (purchases) => {
+    filterPurchases = (purchases) => {
       this.props.getPurchases(purchases)
       let filteredUsers = purchases.filter((purchase) => purchase.user_id === 39)
       let filteredPurchases = filteredUsers.filter((purchase) => !purchase.sold)
@@ -39,7 +39,7 @@ class PurchaseContainer extends React.Component {
     
     completePurchase = () => {
       this.state.purchase.forEach((item) =>
-      fetch(`http://localhost:3000/api/v1/purchases/${item.id}`, {
+      fetch(`http://localhost:3000/purchases/${item.id}`, {
         method: "PATCH",
         body: JSON.stringify({
           sold: true, 
@@ -54,7 +54,7 @@ class PurchaseContainer extends React.Component {
 
     itemQuantity = () => {
       this.state.purchase.forEach((item) =>
-        fetch(`http://localhost:3000/api/v1/items/${item.item_id}`, {
+        fetch(`http://localhost:3000/items/${item.item_id}`, {
           method: "PATCH",
           body: JSON.stringify({
             quantity: item.quantityAvailable - item.quantity,
@@ -77,7 +77,7 @@ class PurchaseContainer extends React.Component {
             <PayPalButton
             amount={this.state.total} onSuccess={(data) => {
               alert(
-                "Your Transaction Was Successfully Completed!"
+               "Your Transaction Was Successfully Completed!"
               )
               this.completePurchase()
             }}

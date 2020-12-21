@@ -17,18 +17,18 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 
 class App extends React.Component {
-  state= {
+  state = {
     items: [],
     purchases: [],
     itemFiltered: [],
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/api/v1/items")
+    fetch("http://localhost:3000/items")
     .then((resp) => resp.json())
     .then ((items) => this.setState({ items: items }))
 
-    fetch("http://localhost:3000/api/v1/purchases")
+    fetch("http://localhost:3000/purchases")
     .then((resp) => resp.json())
     .then((purchases) => this.setState({ purchases: purchases }))
   }

@@ -11,8 +11,12 @@ class Form extends React.Component {
         quantity: "",
     }
 
+    changeHandler = (e) => {
+        this.setState({ [e.target.name]: e.target.value })
+    }
     submitHandler = (e) => {
         e.preventDefault()
+        console.log(this.state)
         this.setState({
         name: "",
         category: "miscellaneous",
@@ -24,19 +28,21 @@ class Form extends React.Component {
     })
         this.sellItem()
     }
-    changeHandler = (e) => {
-        this.setState({ [e.target.name]: e.target.value })
-    }
+    
     
     sellItem = () => {
-        fetch("http://localhost:3000/api/v1/items", {
+        fetch("http://localhost:3000/items", {
             method: "POST",
             headers: {
               "Content-type": "application/json",
-              Accept: "application/json",
+              "Accept": "application/json"
             },
-            body: JSON.stringify(this.state),   
+            body: JSON.stringify(this.state)   
+            
         })
+        // .then(resp => resp.json())
+        // .then (data => (this.setState(data))) 
+
     }
 
     render() {

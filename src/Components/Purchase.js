@@ -8,7 +8,7 @@ class Purchase extends React.Component {
     }
 
     componentDidMount() {
-        fetch(`http://localhost:3000/api/v1/items/${this.props.purchase.item_id}`)
+        fetch(`http://localhost:3000/items/${this.props.purchase.item_id}`)
         .then((resp) => resp.json())
         .then((item) => this.updateState(item))
     }
@@ -16,24 +16,26 @@ class Purchase extends React.Component {
     updateState = (item) => {
         this.setState({
             item: item,
-            price: item.price * this.props.purchase.quantity
+            price: item.price * this.props.purchase.quantity,
         })
         this.getTotal()
     }
     getTotal = () => {
         this.props.getTotal(this.state.price)
     }
-    deleteHandler = (e) => {
+    deleteHandler = () => {
         const deleted = this.state.deleted
-        this.setState({ deleted: !deleted, price: 0 })
-        console.log(this.state.item.price)
+        this.setState({ deleted: !deleted, item: [], price: 0 }, console.log(this.state))
+        // console.log(this.state)
         this.props.updateTotal(this.state.item.price * this.props.purchase.quantity)
         this.deleteCart()
        }
 
+   
    deleteCart = (e) => {
+    //    e.preventDefault();
        let id = this.props.purchase.id
-       fetch(`http://localhost:3000/api/v1/purchases/${id}`, {
+       fetch(`http://localhost:3000/purchases/${id}`, {
         method: "DELETE",
       })
    }
@@ -43,10 +45,10 @@ class Purchase extends React.Component {
        let item = this.state.item
        return (
            <div className={this.state.deleted ? "deleted" : "visible"}>
-               <img src={item.image} alt={item.name} />
-                <h5>{item.name}</h5>
-                <h5>${item.price * this.props.purchase.quantity}</h5>
-                <button onClick={this.deleteHandler}>Delete</button>
+               <img src={item?.image} alt={item?.name} />
+                <h5>{item?.name}</h5>
+                <h5>${item?.price * this.props.purchase.quantity}</h5>
+                <button className="delete-cart" onClick={this.deleteHandler}>Delete</button>
                 <h5>Quantity: {this.props.purchase.quantity}</h5>  
            </div>
        )

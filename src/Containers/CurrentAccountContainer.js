@@ -9,17 +9,17 @@ const CurrentAccountContainer = (props) => {
     const userSelling = filteredItems.map((item) => (
         <Sell key={item.id} item={item}/>
     ))
-    const filterUserPurchases = props.purchases.filter((purchase) => (purchase.user_id = 39))
-    const filterSales = filterUserPurchases.filter((purchase) => purchase.sold)
-    const userBought = filterSales.map((purchase) => (
-      <Buy key={purchase.id} purchase={purchase} items={props.items} />
-    ))
+    // const filterUserPurchases = props.purchases.filter((purchase) => (purchase.user_id = 39))
+    // const filterSales = filterUserPurchases.filter((purchase) => purchase.sold)
+    // const userBought = filterSales.map((purchase) => (
+    //   <Buy key={purchase.id} purchase={purchase} items={props.items} />
+    // ))
 
     return (
         <div>
           <h1 className="account-headers">Items for Sale</h1>
           {userSelling}
-          {userBought}
+          {/* {userBought} */}
         </div>
       )
 }

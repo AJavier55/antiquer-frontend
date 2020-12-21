@@ -46,6 +46,7 @@ class PurchaseContainer extends React.Component {
         }),
         headers: {
           "Content-type": "application/json",
+          "Accepts": "application/json"
         },
       })
     )
@@ -61,6 +62,7 @@ class PurchaseContainer extends React.Component {
           }),
           headers: {
             "Content-type": "application/json",
+            "Accepts": "application/json"
           },
         })
       )

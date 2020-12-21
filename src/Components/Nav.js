@@ -13,7 +13,7 @@ export class NavBar extends React.Component {
     }
     changeHandler = (e) => {
         this.setState({ [e.target.name]: e.target.value })
-      }
+    }
 
      onMouseEnter = () => {}
 
@@ -52,15 +52,23 @@ export class NavBar extends React.Component {
                         onClick={this.navBarFilter}
                     >
                         Antiques
-                    </Nav.Link>         
+                    </Nav.Link>   
                     {/* <Nav.Link
+                        href={"/account"}
+                        onMouseEnter={this.onMouseEnter}
+                        onMouseLeave={this.onMouseLeave}
+                        onClick={this.navBarFilter}
+                        >
+                     My Account
+                    </Nav.Link>       */}
+                    <Nav.Link
                         href={"/sell-item"}
                         onMouseEnter={this.onMouseEnter}
                         onMouseLeave={this.onMouseLeave}
                         onClick={this.navBarFilter}
-                    > */}
-                        {/* Sell  */}
-                    {/* </Nav.Link> */}
+                    >
+                        Sell 
+                    </Nav.Link>
                     <Nav.Link href="/purchase">
                         Cart           
                     </Nav.Link>

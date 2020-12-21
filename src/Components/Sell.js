@@ -9,7 +9,7 @@ class Sell extends React.Component {
         this.removeItem()
     }
    
-    removeItem = (e) => {
+    removeItem = () => {
         let  id = this.props.item.id
         fetch(`http://localhost:3000/items/${id}` , {
             method: "DELETE",

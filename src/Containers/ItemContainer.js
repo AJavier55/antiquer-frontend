@@ -37,19 +37,19 @@ class ItemContainer extends React.Component {
         this.setState({ filteredItems: this.state.items })
       }
     
-      formHandler = () => {
-        this.setState({ display: !this.state.display })
-      }
+      // formHandler = () => {
+      //   this.setState({ display: !this.state.display })
+      // }
 
       render() {
           return (
               <div>
-                  {this.state.display ? <FormContainer /> : null}
+                  {/* {this.state.display ? <FormContainer /> : null}
                   <div>
                   <button onClick={this.formHandler}>
                     List Item
                   </button>
-                  </div>
+                  </div> */}
 
                   <CategoryFilter 
                   sorting={this.sorting}

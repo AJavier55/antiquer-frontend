@@ -18,6 +18,12 @@ class PurchaseContainer extends React.Component {
       let filteredPurchases = filteredUsers.filter((purchase) => !purchase.sold)
       this.setState({ purchase: filteredPurchases })
     }
+
+    updatePurchase = (to_delete) => {
+      let filterItem = this.state.purchase.filter((item) => item.item_id !== to_delete)
+      return this.setState({purchase: filterItem})
+
+    }
     cartPurchase = () => {
       return this.state.purchase.map((purchase) => (
         <Purchase
@@ -25,6 +31,7 @@ class PurchaseContainer extends React.Component {
           purchase={purchase}
           getTotal={this.getTotal}
           updateTotal={this.updateTotal}
+          updatePurchase={this.updatePurchase}
         />
       ))
     }

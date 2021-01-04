@@ -16,7 +16,7 @@ class Form extends React.Component {
     }
     submitHandler = (e) => {
         e.preventDefault()
-        console.log(this.state)
+        // console.log(this,this.state)
         this.setState({
         name: "",
         category: "miscellaneous",

@@ -13,6 +13,7 @@ import SearchContainer from "./Containers/SearchContainer"
 import ShowItem from "./Components/ShowItem"
 // import { ReactComponent } from '*.svg'
 import "bootstrap/dist/css/bootstrap.min.css"
+import "./App.css"
 
 
 

@@ -28,7 +28,6 @@ class Purchase extends React.Component {
     deleteHandler = () => {
         const deleted = this.state.deleted
         this.setState({ deleted: !deleted, price: 0 })
-        // console.log(this.state)
         this.props.updateTotal(this.state.item.price * this.props.purchase.quantity)
         this.deleteCart()
         // this.updateCart()
@@ -37,18 +36,13 @@ class Purchase extends React.Component {
     
     deleteCart = () => {
        let id = this.props.purchase.id
-    //    console.log(this.state.item)
        fetch(`http://localhost:3000/purchases/${id}`, {
         method: "DELETE",
       })
-    //   .then(this.props.updatePurchase(id))
     .then(resp => resp.json())
     .then (data => this.props.updatePurchase(data.item_id))
-    //   .then (this.props.history.push("/purchase"))
    }
 
-
-  
   
 
    render() {
@@ -57,10 +51,13 @@ class Purchase extends React.Component {
        if (item !== []) {
         return (
             <div className={this.state.deleted ? "deleted" : "visible"}>
-                <img src={item.image} alt={item.name} />
-                 <h5>{item.name}</h5>
-                 <h5>${item.price * this.props.purchase.quantity}</h5>
+                <img className="cart-item-image" src={item.image} alt={item.name} />
+                 <h5 className="cart-item-name">{item.name}</h5>
+                 <h5 className="cart-price">${item.price * this.props.purchase.quantity}</h5>
+                 <div className="delete-cart-div">
                  <button className="delete-cart" onClick={this.deleteHandler}>Delete</button>
+                 </div>
+                 
                  {/* <h5>Quantity: {this.props.purchase.quantity}</h5>   */}
             </div>
         )

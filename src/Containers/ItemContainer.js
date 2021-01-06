@@ -43,21 +43,14 @@ class ItemContainer extends React.Component {
 
       render() {
           return (
-              <div>
-                  {/* {this.state.display ? <FormContainer /> : null}
-                  <div>
-                  <button onClick={this.formHandler}>
-                    List Item
-                  </button>
-                  </div> */}
-
+              <div className="front-page-div">
                   <CategoryFilter 
                   sorting={this.sorting}
                   clearFilter={this.clearFilter}
                   items={this.props.items}
                   />
-                 <div>
-                    <h2>Items</h2>
+                 <div className="item-wrapper">
+                    {/* <h2 className="all-items">Antiques</h2> */}
                     <div className="item-cards">
                         {this.showItems()} 
                     </div>

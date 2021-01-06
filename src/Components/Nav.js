@@ -26,17 +26,20 @@ export class NavBar extends React.Component {
     
     render() {
         return (
-            <Navbar>
+            <Navbar expand="md" bg="light" variant="light" >
+                <Navbar.Brand href="/">Antiquer</Navbar.Brand>
                 <Form inline>
                 <FormControl
                     type="text"
                     placeholder="Search"
+                    className="mr-sm-2"
                     name="searchItem"
                     value={this.state.searchItem}
                     onChange={this.changeHandler}
                 />
                 <Link to="/search">
                     <Button
+                        variant="outline-warning"
                         onClick={this.submitHandler}
                     >
                         Search
@@ -44,7 +47,7 @@ export class NavBar extends React.Component {
                 </Link>
                 </Form>
                 
-                <Nav className="antique-nav">
+                <Nav className="mr-auto">
                     <Nav.Link
                         href={"/antiques"}
                         onMouseEnter={this.onMouseEnter}

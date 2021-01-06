@@ -4,21 +4,21 @@ import { Link } from "react-router-dom"
 const Item = (props) => {
     return (
         <div className="individual-item-card">
-            <div className="item-image">
-                <img src={props.item.image} alt={props.item.name}></img>
+            <div className="item-image-card-div">
+                <img className="item-card-image" src={props.item.image} alt={props.item.name}></img>
             </div>
-            <div className="item-name">
-                <h5>{props.item.name}</h5>
+            <div className="item-name-card-div">
+                <p className="item-name-card">{props.item.name}</p>
             </div>
-            <div className="item-quantity">
-                <h5> Quantity: {props.item.quantity} </h5>
-            </div>
-            <div className="item-price">
-                <h5>${props.item.price}</h5>
-            </div>
+            {/* <div className="item-quantity-card-div">
+                <p className="item-quantity-card"> Quantity: {props.item.quantity} </p>
+            </div> */}
+            <div className="item-price-card-div">
+                <p className="item-price-card">${props.item.price}</p>
             <Link to={{ pathname:`/items/${props.item.id}`, state: props}}>
-                    <button type="button">View</button>
+                    <button className="view-item-button" type="button">View</button>
             </Link>
+            </div>
         </div>
     )
 }

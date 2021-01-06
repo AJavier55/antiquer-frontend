@@ -21,11 +21,13 @@ class Sell extends React.Component {
         let item = this.props.item
         return (
             <div className={this.state.deleted ? "deleted" : "visible"}>
-                <img src={item.image} alt={item.name} />
-                <h5> {item.name} </h5>
-                <h5> ${item.price} </h5>
-                <button onClick={this.clickHandler}>Delete</button>
-                <h5> Quantity: {item.quantity} </h5>
+                <img className="selling-item-image" src={item.image} alt={item.name} />
+                <h5 className="selling-item-name"> {item.name} </h5>
+                <h5 className="selling-item-price"> ${item.price} </h5>
+                <div className="selling-item-delete">
+                  <button onClick={this.clickHandler}>Delete</button>
+                </div>
+                <h5 className="selling-item-quantity"> Quantity: {item.quantity} </h5>
             </div>
         )
     }

@@ -3,7 +3,9 @@ import Form from "../Components/Form"
 
 const FormContainer = () => {
     return (
-        <Form />
+        <div className="form-container">
+            <Form />
+        </div>
     )
 }
 

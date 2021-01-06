@@ -49,12 +49,22 @@ class ShowItem extends React.Component {
       render() {
           let item = this.state.item
           return (
-              <div>
-                  <img src={item.image} alt={item.name} />
+              <div className="show-item-div">
+                <div className="show-left">
+                <div className="show-image">
+                <img src={item.image} alt={item.name} />
+                </div>
+                </div>
+                <div className="show-right">
+                  <div className="item-info">
                   <h2>{item.name}</h2>
-                  <h5>${item.price}</h5>
-                  <span>
-                      <form className="add-to-cart" onSubmit={this.submitHandler}>
+                  <div className="price">
+                    <div className="show-item-price">
+                      <h5>Price: ${item.price}</h5>
+                    </div>
+                    <div className="add-to-cart">
+                      <span>
+                      <form className="add-item-to-cart" onSubmit={this.submitHandler}>
                           <input
                             type="number"
                             label="quantity"
@@ -66,19 +76,27 @@ class ShowItem extends React.Component {
                             onChange={this.changeHandler}
                           ></input>
                           <input
+                          className="add-to-cart-button"
                             type="submit"
                             value="Add To Cart"
                             ></input>
                       </form>
-                      <div>
-                      <h5>Quantity: {item.quantity}</h5>
-                      </div>
-                  </span>
-                <div className="description">
+                      </span>
+                    </div>
+                    <div className="available-quantity">
+                    <h5>Available Quantity: {item.quantity}</h5>
+                    </div>
+                  </div>
+                  </div>
+                <div className="show-bottom">
+                    <div className="show-description">
                     <h5>About</h5>
                     <p>{item.description}</p>
-              </div>
 
+                    </div>
+                </div>
+                </div>
+                  
               </div>
 
           )

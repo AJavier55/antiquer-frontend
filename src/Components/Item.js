@@ -10,9 +10,6 @@ const Item = (props) => {
             <div className="item-name-card-div">
                 <p className="item-name-card">{props.item.name}</p>
             </div>
-            {/* <div className="item-quantity-card-div">
-                <p className="item-quantity-card"> Quantity: {props.item.quantity} </p>
-            </div> */}
             <div className="item-price-card-div">
                 <p className="item-price-card">${props.item.price}</p>
             <Link to={{ pathname:`/items/${props.item.id}`, state: props}}>

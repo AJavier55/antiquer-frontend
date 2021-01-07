@@ -80,8 +80,11 @@ class PurchaseContainer extends React.Component {
     render() {
       return (
         <div className="cart">
-          {/* <h2 className="cart-div">Cart</h2> */}
+          <h2 className="cart-div">User Cart</h2>
           {this.cartPurchase()}
+          <div className="cart-total">
+              <h5>Total: ${this.state.total}</h5>
+            </div>
           <div className="payment-button-div">
             <div className="paypal-button">
             <PayPalButton
@@ -93,9 +96,7 @@ class PurchaseContainer extends React.Component {
             }}
             />
             </div>
-            <div className="cart-total">
-              <h5>Total: ${this.state.total}</h5>
-            </div>
+            
           </div>
         </div>
       )

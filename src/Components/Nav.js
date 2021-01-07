@@ -26,26 +26,18 @@ export class NavBar extends React.Component {
     
     render() {
         return (
-            <Navbar expand="md" bg="light" variant="light" >
-                <Navbar.Brand href="/">Antiquer</Navbar.Brand>
-                <Form inline>
-                <FormControl
-                    type="text"
-                    placeholder="Search"
-                    className="mr-sm-2"
-                    name="searchItem"
-                    value={this.state.searchItem}
-                    onChange={this.changeHandler}
-                />
-                <Link to="/search">
-                    <Button
-                        variant="outline-warning"
-                        onClick={this.submitHandler}
-                    >
-                        Search
-                    </Button>
-                </Link>
-                </Form>
+            <Navbar expand="md" bg="danger" variant="light" >
+            <Navbar.Brand href="/">
+                <img 
+                    alt=""
+                    src="/updatedlogo.png"
+                    width="120"
+                    height="120"
+                    className="logo"
+                    />{' '}
+                    
+            </Navbar.Brand>
+                
                 
                 <Nav className="mr-auto">
                     <Nav.Link
@@ -77,6 +69,25 @@ export class NavBar extends React.Component {
                     </Nav.Link>
 
                 </Nav>
+                <Form inline>
+                <FormControl
+                    type="text"
+                    placeholder="Search"
+                    className="mr-sm-2"
+                    name="searchItem"
+                    value={this.state.searchItem}
+                    onChange={this.changeHandler}
+                />
+                <Link to="/search">
+                    <Button
+                        variant="outline-warning"
+                        onClick={this.submitHandler}
+                    >
+                        Search
+                    </Button>
+                </Link>
+                </Form>
+                
             </Navbar>
         )
     }

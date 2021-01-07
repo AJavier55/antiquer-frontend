@@ -58,7 +58,7 @@ class Purchase extends React.Component {
                  <button className="delete-cart" onClick={this.deleteHandler}>Delete</button>
                  </div>
                  
-                 {/* <h5>Quantity: {this.props.purchase.quantity}</h5>   */}
+                 {/* <h5 className="cart-item-quantity">Quantity: {this.props.purchase.quantity}</h5>   */}
             </div>
         )
        }

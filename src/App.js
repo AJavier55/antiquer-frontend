@@ -46,7 +46,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router>
+      <div className="app-div">
+        <Router>
         <div className="App">
           <NavBar searchHandler={this.searchHandler} />
           <Route exact path="/"
@@ -115,6 +116,8 @@ class App extends React.Component {
           <Route exact path="/sell-item" component={FormContainer} />
         </div>
       </Router>
+      </div>
+      
     )
   }
 }

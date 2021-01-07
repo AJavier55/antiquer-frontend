@@ -1,6 +1,10 @@
 import React from "react"
+import { Button } from "react-bootstrap"
+import { FormControl } from "react-bootstrap"
+import { Form } from "react-bootstrap"
 
-class Form extends React.Component {
+
+class SellForm extends React.Component {
     state = {
         name: "",
         category: "miscellaneous",
@@ -48,41 +52,41 @@ class Form extends React.Component {
     render() {
         return (
             <div className="sell-form">
-                <h4 className="sell">For Sale</h4>
+                <h4 className="sell">List Item</h4>
                 <form className="form" onSubmit={this.submitHandler}>
-                    <div className="input-name">
-                        Name:
-                        <input name="name" type="text" value={this.state.name} onChange={this.changeHandler} placeholder="name" />
+                    <div className="input-name-form">
+                        {/* Name: */}
+                        <input className="input-name" name="name" type="text" value={this.state.name} onChange={this.changeHandler} placeholder="name" />
                     </div>
-                    <div className="input-price">
-                        Price:
-                        <input name="price" type="number" value={this.state.price} onChange={this.changeHandler} placeholder="price" />
+                    <div className="input-price-form">
+                        {/* Price: */}
+                        <input className="input-price" name="price" type="number" value={this.state.price} onChange={this.changeHandler} placeholder="price" />
                     </div>
-                    <div className="input-category">
-                        Category:
-                        <select name="category" value={this.state.category} onChange={this.changeHandler} >
+                    <div className="input-category-form">
+                        {/* Category: */}
+                        <select className="input-category" name="category" value={this.state.category} onChange={this.changeHandler} >
                             <option value="miscellaneous">Miscellaneous</option>
                             <option value="fashion">Fashion</option>
                             <option value="furniture">Furniture</option>
                             <option value="collectibles">Collectibles</option>
                         </select>
                     </div>
-                    <div className="input-quantity">
-                        Quantity:
-                        <input name="quantity" type="number" min="1" value={this.state.quantity} onChange={this.changeHandler} placeholder="quantity" />
+                    <div className="input-quantity-form">
+                        {/* Quantity: */}
+                        <input className="input-quantity" name="quantity" type="number" min="1" value={this.state.quantity} onChange={this.changeHandler} placeholder="quantity" />
                     </div>
-                    <div className="input-image-url">
-                        Image:
-                        <input name="image" type="text" value={this.state.image} onChange={this.changeHandler} placeholder="image-url" />
+                    <div className="input-image-url-form">
+                        {/* Image: */}
+                        <input className="input-image-url" name="image" type="text" value={this.state.image} onChange={this.changeHandler} placeholder="image-url" />
                     </div>
-                    <div className="input-description">
-                        <textarea name="description" type="text" value={this.state.description} onChange={this.changeHandler} placeholder="description" />
+                    <div className="input-description-form">
+                        <textarea className="input-description" name="description" type="text" value={this.state.description} onChange={this.changeHandler} placeholder="description" />
                     </div>
-                    <input className="sell-button" type="submit" value="sell-item" />
+                    <input className="sell-button" type="submit" value="Sell item" />
                 </form>
             </div>
         )
     }
 }
 
-export default Form
+export default SellForm

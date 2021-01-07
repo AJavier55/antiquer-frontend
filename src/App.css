@@ -1,20 +1,15 @@
-.app {
- height: 0px;
+.App {
+ height: 3px;
 }
-
-.navbar-custom {
-  background-color: yellow;
-}
-
-.nav-button {
-  color: yellow;
+body {
+  background-image: url('https://vineyardranchseniorliving.com/wp-content/uploads/2015/09/vintage-texture-bg.jpg');
+  
+  /* background-image: url(''); */
 }
 .item-cards {
   width: 1200px;
-  /* float: center; */
   margin: auto;
-  /* margin-right: 20px;
-  margin-top: 0px; */
+ 
 }
 .all-items {
   font-family: 'Open Sans', sans-serif;
@@ -22,15 +17,15 @@
   margin-left: 50px;
 }
 .individual-item-card {
-  border-style: ;
-  border-width: 1px;
+  border-width: 150px;
   display: block;
-  box-shadow: 3px 3px 10px rgb(168, 168, 163);
+  box-shadow: 3px 3px 10px rgb(231, 199, 18);
   width: 250px;
-  height: 350px;
+  height: 300px;
   text-align: center;
   margin: 25px;
-  float: left;
+  float: right;
+  border-radius:50px;
 }
 .item-image-card-div {
   width: 150px;
@@ -39,35 +34,34 @@
 }
 .item-card-image {
   max-width: 150px;
-  max-height: 150px;
-  margin-top: 20px;
+  max-height: 165px;
+  margin-top: 35px;
 }
 .item-name-card-div {
   margin: auto;
-  width: 225px;
+  width: 230px;
   height: 60px;
 }
 .item-name-card {
-  margin-top: 20px;
+  margin-top: 35px;
   word-wrap: break-word;
   width: 225px;
-  font-weight: bold;
+  font-weight: italic;
   font-size: 20px;
   font-family: 'Open Sans', sans-serif;
 }
 .item-price-card {
-  font-family: garamond;
-  font-weight: bold;
+  font-weight: italic;
   font-size: 20px;
   float: left;
   margin-left: 20px;
-  margin-top: 45px;
+  margin-top: 4px;
   font-family: 'Open Sans', sans-serif;
 }
 .view-item-button {
   float: right;
-  margin-right: 25px;
-  margin-top: 45px;
+  margin-right: 30px;
+  margin-top: 4px;
   box-shadow: inset 0px 1px 0px 0px #ecd81e;
   background: linear-gradient(to bottom, #FFDD00 5%, #FBB034 100%);
   background-color: #ecd81e;
@@ -164,31 +158,57 @@
   float: left;
   width: 400px;
 }
-.cart-item-name {
-  float: left;
-  font-family: 'Open Sans', sans-serif;
-  margin-left: 40px;
-  margin-top: 50px;
-}
+
 .cart-item-image {
   float: left;
   max-width: 200px;
   max-height: 200px;
   margin-left: 20px;
 }
+.cart-div {
+  font-family: 'Open Sans', sans-serif;  
+  margin-top: 20px;
+  margin-left: 25px;
+}
+.cart-item-name {
+  float: left;
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 40px;
+  margin-top: 50px;
+}
+.cart-item-quantity {
+  position: absolute;
+  margin-left: 900px;
+  margin-top: 50px;
+  font-family: 'Open Sans', sans-serif;
+}
 .cart-price {
-  margin-right: 25px;
+  margin-right: 1000px;
   float: right;
   font-family: 'Open Sans', sans-serif;
-  margin-left: 15px;
-  margin-top: 50px;
+  margin-left: 0px;
+  margin-top: 30px;
+}
+.cart-total {
+  font-family: 'Open Sans', sans-serif;
+  float: left;
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 150px 
+ }
+ .paypal-button {
+  float: right;
+  margin-right: 1350px;
+  max-height: 100px;
+  margin-top: 25px;
 }
 .delete-cart-div {
   position: absolute;
-  margin-left: 1050px;
+  /* float: left; */
+  margin-left: 350px;
 }
 .delete-cart {
-  margin-top: 50px;
+  margin-top: 100px;
   box-shadow: inset 0px 1px 0px 0px #ecd81e;
   background: linear-gradient(to bottom, #FFDD00 5%, #FBB034 100%);
   background-color: #ecd81e;
@@ -196,7 +216,7 @@
   border: 1px solid #ecd81e;
   display: inline-block;
   cursor: pointer;
-  color: #ffffff;
+  color: black;
   font-family: 'Open Sans', sans-serif; 
    font-size: 15px;
   font-weight: bold;
@@ -210,24 +230,94 @@
 }
 .delete-cart:active {
   position: relative;
-  top: 1px;
+ 
 }
-.cart-div {
-  font-family: 'Open Sans', sans-serif;  
+.visible {
   margin-top: 20px;
-  margin-left: 25px;
+  margin-left: 20px;
+  width: 1300px;
+  display: inline-block;
 }
-.cart-total {
-  font-family: 'Open Sans', sans-serif;
-  float: right;
-  position: absolute;
-  margin-left: 1175px;
-  margin-top: 20px
+
+*, *:before, *:after {
+  box-sizing: border-box;
 }
-.paypal-button {
-  float: right;
-  /* margin: auto; */
- margin-right: 60px;
-  max-height: 200px;
-  margin-top: 25px; 
+.input-name {
+  padding: 10px;
+  margin:10px 0;
+  border: 2px solid #eee;
+  box-shadow: 3px 3px 10px rgb(168, 168, 163);
+  border-radius:10px;
+  width:20%;
+}
+.input-price {
+  padding: 10px;
+  margin:10px 0;
+  border: 2px solid #eee;
+  box-shadow: 3px 3px 10px rgb(168, 168, 163);
+  border-radius:10px;
+  width:20%;
+}
+.input-category {
+  padding: 10px;
+  margin:10px 0;
+  border: 2px solid #eee;
+  box-shadow: 3px 3px 10px rgb(168, 168, 163);
+  border-radius:10px;
+  width:20%;
+}
+.input-quantity {
+  padding: 10px;
+  margin:10px 0;
+  border: 2px solid #eee;
+  box-shadow: 3px 3px 10px rgb(168, 168, 163);
+  border-radius:10px;
+  width:20%;
+}
+.input-image-url {
+  padding: 10px;
+  margin:10px 0;
+  border: 2px solid #eee;
+  box-shadow: 3px 3px 10px rgb(168, 168, 163);
+  border-radius:10px;
+  width:20%;
+}
+.input-description {
+  padding: 10px;
+  margin:10px 0;
+  border: 2px solid #eee;
+  box-shadow: 3px 3px 10px rgb(168, 168, 163);
+  border-radius:10px;
+  width:35%;
+}
+.sell-button {
+  /* remove default behavior */
+  appearance:none;
+  -webkit-appearance:none;
+
+  /* usual styles */
+  margin-top: 10px;
+  box-shadow: inset 0px 1px 0px 0px #ecd81e;
+  background: linear-gradient(to bottom, #FFDD00 5%, #FBB034 100%);
+  background-color: #ecd81e;
+  border-radius: 6px;
+  border: 1px solid #ecd81e;
+  display: inline-block;
+  cursor: pointer;
+  color: black;
+  font-family: 'Open Sans', sans-serif; 
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #ecd81e;
+}
+.sell-button:hover {
+  background: linear-gradient(to bottom, #FFCC2F 5%, #EF5734  100%);
+  background-color: #ecd81e;
+}
+.category-filter {
+  font-family: 'Open Sans', sans-serif; 
+  padding: 10px;
+  margin:80px 0;
 }

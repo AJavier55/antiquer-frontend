@@ -19,7 +19,7 @@ body {
 .individual-item-card {
   border-width: 150px;
   display: block;
-  box-shadow: 3px 3px 10px rgb(231, 199, 18);
+  box-shadow: 3px 3px 10px rgb(190, 87, 47);
   width: 250px;
   height: 300px;
   text-align: center;
@@ -54,7 +54,7 @@ body {
   font-weight: italic;
   font-size: 20px;
   float: left;
-  margin-left: 20px;
+  margin-left: 25px;
   margin-top: 4px;
   font-family: 'Open Sans', sans-serif;
 }
@@ -65,7 +65,7 @@ body {
   box-shadow: inset 0px 1px 0px 0px #ecd81e;
   background: linear-gradient(to bottom, #FFDD00 5%, #FBB034 100%);
   background-color: #ecd81e;
-  border-radius: 6px;
+  border-radius: 30%;
   border: 1px solid #ecd81e;
   display: inline-block;
   cursor: pointer;
@@ -85,10 +85,7 @@ body {
   position: relative;
   top: 1px;
 }
-.find-by {
-  margin-left: 10px;
-  margin-top: 25px;
-}
+
 .category-filter {
   float: left;
 }
@@ -242,6 +239,20 @@ body {
 *, *:before, *:after {
   box-sizing: border-box;
 }
+.sell-form {
+  margin-left: 30%;
+    margin-right:25%;
+    width: 100%;
+    
+}
+/* .form-container {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
+} */
 .input-name {
   padding: 10px;
   margin:10px 0;
@@ -249,6 +260,10 @@ body {
   box-shadow: 3px 3px 10px rgb(168, 168, 163);
   border-radius:10px;
   width:20%;
+}
+.input-name-form {
+  
+
 }
 .input-price {
   padding: 10px;
@@ -258,6 +273,9 @@ body {
   border-radius:10px;
   width:20%;
 }
+.input-price-form {
+  
+}
 .input-category {
   padding: 10px;
   margin:10px 0;
@@ -265,6 +283,9 @@ body {
   box-shadow: 3px 3px 10px rgb(168, 168, 163);
   border-radius:10px;
   width:20%;
+}
+.input-category-form {
+
 }
 .input-quantity {
   padding: 10px;
@@ -274,6 +295,9 @@ body {
   border-radius:10px;
   width:20%;
 }
+.input-quantity-form {
+
+}
 .input-image-url {
   padding: 10px;
   margin:10px 0;
@@ -282,6 +306,9 @@ body {
   border-radius:10px;
   width:20%;
 }
+.input-image-url-form {
+
+}
 .input-description {
   padding: 10px;
   margin:10px 0;
@@ -289,6 +316,9 @@ body {
   box-shadow: 3px 3px 10px rgb(168, 168, 163);
   border-radius:10px;
   width:35%;
+}
+.input-description-form {
+
 }
 .sell-button {
   /* remove default behavior */
@@ -320,4 +350,90 @@ body {
   font-family: 'Open Sans', sans-serif; 
   padding: 10px;
   margin:80px 0;
+}
+.form-container {
+  
+}
+.showcase-img {
+  background-image: url('https://i.pinimg.com/originals/ac/84/89/ac848902e57b1bad587c7f28a1bd0d4c.jpg');
+  background-color: #F4F5FF;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 100%;
+  width: 100%;
+  height: 850px;
+}
+
+.bold-four {
+  /* font-weight: 400; */
+font-family: 'Euphoria Script', cursive;  
+font-weight: 600;
+font-size: 30px;
+float: right;
+margin-right: 150px;
+margin-top: 3px;
+
+}
+.main-container {
+  min-height: 100vh;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 100px;
+}
+
+.home-text-2 {
+  font-weight: 700;
+  font-size: 120px;
+  margin-right: 0px;
+  margin-top: 200px;
+  /* margin-top: 50px; */
+  font-family: 'Euphoria Script', cursive;
+  /* text-align: center; */
+  float: right;
+}
+/* .home-text-3 {
+  font-weight: 700;
+  font-size: 80px;
+  font-family: 'Euphoria Script', cursive;
+  text-align: center;
+} */
+
+.start {
+  border-radius: 9px;
+  border-width: 0.1em;
+  font-size: 15px;
+  padding: 10px 20px 10px 20px;
+  /* margin-left: 10px; */
+  float: right;
+  font-weight: 600;
+  background: linear-gradient(to bottom, #FFDD00 5%, #FBB034 100%);
+  color: black;
+  margin-right: 180px;
+  margin-top: 15px;
+  border-radius: 50%;
+}
+
+.start:hover {
+  color: white;
+}
+.brand {
+  font-weight: bolder;
+}
+.sell {
+  font-family: 'Euphoria Script', cursive;
+  font-weight: 700;
+  font-size: 120px;
+  /* margin-right: 0px; */
+  margin-top: 30px;
+  /* text-align: center; */
+  /* float: right; */
+}
+.find-by {
+  margin-left: 10px;
+  margin-top: 25px;
+  /* font-family: 'Euphoria Script', cursive;  */
+  /* font-weight: 700;
+  font-size: 20px; */
 }

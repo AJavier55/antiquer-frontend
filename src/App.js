@@ -11,6 +11,7 @@ import MiscContainer from "./Containers/MiscContainer"
 import PurchaseContainer from "./Containers/PurchaseContainer"
 import SearchContainer from "./Containers/SearchContainer"
 import ShowItem from "./Components/ShowItem"
+import Home from './Landing/Home'
 // import { ReactComponent } from '*.svg'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
@@ -61,6 +62,12 @@ class App extends React.Component {
           render={(props) => (
             <SearchContainer {...props}
             items={this.state.itemFiltered} />
+          )}
+          />
+          <Route exact path="/home"
+          render={(props) => (
+            <Home {...props}
+            items={this.state.items} />
           )}
           />
           <Route exact path="/antiques"

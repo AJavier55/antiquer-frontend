@@ -27,7 +27,7 @@ export class NavBar extends React.Component {
     render() {
         return (
             <Navbar expand="md" bg="danger" variant="light" >
-            <Navbar.Brand href="/">
+            <Navbar.Brand href="/home">
                 <img 
                     alt=""
                     src="/updatedlogo.png"
